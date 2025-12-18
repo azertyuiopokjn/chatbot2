@@ -1,0 +1,51 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "patterns": ["\\bhi\\b", "\\bhello\\b", "\\bhey\\b"],
+      "responses": ["Hello there!{personal_touch}", "Hey!{personal_touch}", "Hi!{personal_touch}"]
+    },
+    {
+      "name": "goodbye",
+      "patterns": ["\\bbye\\b", "\\bgoodbye\\b", "see you"],
+      "responses": [
+        "Goodbye! If you need me again, just start another chat.",
+        "See you later!"
+      ]
+    },
+    {
+      "name": "gratitude",
+      "patterns": ["thank you", "thanks"],
+      "responses": ["You're welcome!", "Happy to help!"]
+    },
+    {
+      "name": "remember_name",
+      "patterns": ["my name is (?P<name>[A-Za-z]+)", "i am (?P<name>[A-Za-z]+)"],
+      "responses": ["Nice to meet you, {name}!", "Thanks for sharing your name, {name}."],
+      "slots": ["name"]
+    },
+    {
+      "name": "ask_name",
+      "patterns": ["what is my name", "do you know my name"],
+      "responses": ["You told me your name is {name}.", "I remember you said your name is {name}."],
+      "slots": ["name"]
+    },
+    {
+      "name": "capabilities",
+      "patterns": ["what can you do", "help", "how do i use you"],
+      "responses": [
+        "I can remember your name, keep a short conversation, and reply to common phrases. Ask me something!",
+        "I'm a simple demo bot. Try greeting me or telling me your name."
+      ]
+    },
+    {
+      "name": "feelings",
+      "patterns": ["i feel (?P<feeling>[A-Za-z ]+)", "i am feeling (?P<feeling>[A-Za-z ]+)"],
+      "responses": [
+        "Thanks for sharing. What do you think would make you feel better?",
+        "I'm here to listen. Want to talk more about why you're feeling {feeling}?"
+      ],
+      "slots": ["feeling"]
+    }
+  ]
+}
